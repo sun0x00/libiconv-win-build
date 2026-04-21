@@ -1,5 +1,5 @@
 /* Three-level bitmap lookup.
-   Copyright (C) 2000-2002, 2005-2007, 2009-2024 Free Software Foundation, Inc.
+   Copyright (C) 2000-2002, 2005-2007, 2009-2026 Free Software Foundation, Inc.
    Written by Bruno Haible <bruno@clisp.org>, 2000-2002.
 
    This file is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@
 #else
 #define LIBICONV_SRCLIB_INLINE __inline
 #endif
-static LIBICONV_SRCLIB_INLINE int bitmap_lookup(const void *table, ucs4_t uc);
+static LIBICONV_SRCLIB_INLINE int bitmap_lookup (const void *table, ucs4_t uc);
 
 /* These values are currently hardcoded into gen-uni-tables.c, function
    output_predicate().  */

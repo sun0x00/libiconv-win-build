@@ -77,7 +77,7 @@
     <ClInclude Include="..\..\srclib\safe-read.h">
       <Filter>Header Files\srclib</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\srclib\streq.h">
+    <ClInclude Include="..\..\srclib\streq-opt.h">
       <Filter>Header Files\srclib</Filter>
     </ClInclude>
     <ClInclude Include="..\..\srclib\unitypes.h">

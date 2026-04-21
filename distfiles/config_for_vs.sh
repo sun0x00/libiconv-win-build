@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Derived from INSTALL.windows in the original source
-# to support VS2008/2010/2013/2015/2017/2019/2022.
+# to support VS2008/2010/2013/2015/2017/2019/2022/2026.
 
 # Set environment variables for using MSVC 10/11/12/14,
 # for creating native Windows executables.
@@ -13,6 +13,7 @@ _VS2015=${_VS2015:=0}
 _VS2017=${_VS2017:=0}
 _VS2019=${_VS2019:=0}
 _VS2022=${_VS2022:=1} # default
+_VS2026=${_VS2026:=0}
 _TARGET_X64=${_TARGET_X64:=1}
 _DO_CONFIG=${_DO_CONFIG:=1}
 _DO_MAKE=${_DO_MAKE:=0}
@@ -60,7 +61,13 @@ INCLUDE="${WindowsSdkIncludeDir}um;${WindowsSdkIncludeDir}shared;${INCLUDE}"
 LIB="${WindowsSdkLibDir}${ARCH};${LIB}"
 
 # Visual C++ tools, headers and libraries.
-if [ "${_VS2022}" -eq 1 ]; then
+if [ "${_VS2026}" -eq 1 ]; then
+  _ARCH_PATH_W="\\${ARCH}"
+  VSINSTALLDIR='C:\Program Files\Microsoft Visual Studio\18\Community\'
+  _VCVER=`( cd "/c/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC" && ls -1rd [1-9]* | head -1 )`
+  VCINSTALLDIR="${VSINSTALLDIR}"'VC\Tools\MSVC\'"${_VCVER}"'\'
+  _VCBINDIR=`cygpath -u "${VCINSTALLDIR}"`"/bin/Host${ARCH_U}/${ARCH}"
+elif [ "${_VS2022}" -eq 1 ]; then
   _ARCH_PATH_W="\\${ARCH}"
   VSINSTALLDIR='C:\Program Files\Microsoft Visual Studio\2022\Community\'
   _VCVER=`( cd "/c/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC" && ls -1rd [1-9]* | head -1 )`

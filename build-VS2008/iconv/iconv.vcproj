@@ -421,7 +421,7 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\srclib\streq.h"
+					RelativePath="..\..\srclib\streq-opt.h"
 					>
 				</File>
 				<File

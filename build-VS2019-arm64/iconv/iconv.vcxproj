@@ -68,7 +68,7 @@
     <ClInclude Include="..\..\srclib\localcharset.h" />
     <ClInclude Include="..\..\srclib\progname.h" />
     <ClInclude Include="..\..\srclib\safe-read.h" />
-    <ClInclude Include="..\..\srclib\streq.h" />
+    <ClInclude Include="..\..\srclib\streq-opt.h" />
     <ClInclude Include="..\..\srclib\unitypes.h" />
     <ClInclude Include="..\..\srclib\uniwidth.h" />
     <ClInclude Include="..\..\srclib\uniwidth\cjk.h" />
